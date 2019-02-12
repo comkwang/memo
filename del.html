@@ -1,0 +1,18 @@
+<?  
+
+	$no = $_GET["no"];
+
+  $connect = mysql_connect("localhost","com2net","atlas211726") or die ("접속불가");
+	mysql_select_db("com2net_zbxe") or die("지정DB가 없습니다");
+	
+	$query  = "delete from memo where no = $no";
+	$result = mysql_query($query, $connect);
+	mysql_close($connect);
+	
+?>
+
+
+<script>
+window.alert("삭제완료");
+location.href = "input.html";
+</script>

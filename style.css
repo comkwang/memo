@@ -1,0 +1,71 @@
+
+body {
+	font-family: Tohoma , "맑은 고딕";
+	font-size: 12pt;
+	padding:0px;
+	margin:0px  ;
+
+}
+
+td,div,span,input,textarea,p,select{font: 12px  Tahoma,  "Lucida Grande", "Lucida Sans", Verdana, sans-serif;}
+
+#main {
+	width: 380px;
+}
+#container {
+	width: 380px;
+}
+#header {
+	background-color: #FF4A4D;
+	height: 200px;
+}
+
+#footer {
+	clear: both;
+	background-color: #3B83B1;
+	height: 40px;
+}
+
+#mid {
+
+		
+	width: 900px;
+	min-height:600px;
+	margin:10px auto;
+	margin-bottom: 0px;
+	background: #E1D3B8s;
+	z-index: 2;
+}
+#left {
+	float: left;
+	
+	width: 200px;
+	height: 1000; /* 임의 지정 */
+}
+#right {
+	float: left;
+	
+	width: 200px;
+	height: 1000; /* 임의 지정 */
+}
+
+#maintable {
+	
+	width: 100%;
+	height:auto
+	border: 1px solid black;
+}
+
+.table1 {
+	float:left;
+	width: 270px;
+	height:auto;
+
+}
+
+.table2 {
+	float:left;
+	width: 320px;
+	height:auto;
+	
+}	

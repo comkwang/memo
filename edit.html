@@ -1,0 +1,24 @@
+<?  
+
+	$no = $_GET["no"];
+	$name = $_GET["name"];
+	$email = $_GET["email"];
+	$email = $_GET["memo"];
+
+  $connect = mysql_connect("localhost","com2net","atlas211726") or die ("접속불가");
+	mysql_select_db("com2net_zbxe") or die("지정DB가 없습니다");
+	
+	$query  = "update memo set name=$name, email=$email, memo= $$membo where no = $no";
+	$result = mysql_query($query, $connect);
+	mysql_close($connect);
+	
+?>
+
+<form action=edit_post.html>
+  <input type=hidden name=no value=<? echo $no; ?>>
+  <li> 이름: <input name=name>
+  <li> 이메일: <input name=email>
+  <li> 메모: <input name=memo>
+  <br>
+  <input type=submit value=전송>
+</form>

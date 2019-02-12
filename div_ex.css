@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	padding: 10px;
+	background-color: #FFF;
+}
+#container {
+	width: 380px;
+}
+#header {
+	background-color: #FF4A4D;
+	height: 50px;
+}
+#contents {
+	float: left;
+	background-color: #FFC64A;
+	width: 290px;
+	height: 214px; /* 임의 지정 */
+}
+#sidebar {
+	float: right;
+	background-color: #85C69D;
+	width: 90px;
+	height: 214px; /* 임의 지정 */
+}
+#footer {
+	clear: both;
+	background-color: #3B83B1;
+	height: 40px;
+}

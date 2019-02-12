@@ -1,0 +1,63 @@
+<?
+  include "lib.php";
+  $connect = dbconnect();
+  
+?>
+<head>
+  <link rel=Stylesheet href=style.css type=text/css>
+</head>
+
+<div align=center>
+<table width=600 border =1 >
+<tr>
+	<td> no
+	<td> 이름
+	<td> email
+	<td> memo
+	<td> 시간
+	<td> 삭제
+	<td> 수정
+
+<?
+	$start = $_GET['start'];
+	$page_num = 5;
+	if(!$start) $start= 0;
+	else $start =$start - 1;
+	
+	$query  = "select count(*) as t from memo";
+	$result = mysql_query($query, $connect);
+	$tmp    =	mysql_fetch_array($result);
+	$total  = $tmp[t];
+
+	$query  = "select * from memo order by no desc limit $start, $page_num";
+	$result = mysql_query($query, $connect);
+
+	while($data = mysql_fetch_array($result)) {
+?>
+
+<tr>
+	<td> <? echo $data[no] ?></td>
+	<td> <? echo $data[name] ?></td>
+	<td> <? echo $data[email] ?></td>
+	<td> <? echo $data[memo] ?></td>
+	<td> <? echo $data[regdate] ?></td>
+	<td> <a href=del.html?no=<?echo $data[no]?> >삭제</a></td>
+	<td> <a href=edit.html?no=<?echo $data[no]?> >수정</a></td>
+
+<?
+	}
+	echo "</table><table width = 600 border=1><tr><td>";
+		
+	$pages = $total /$page_num;
+	
+	for($i=1;$i <=$pages; $i++) {
+		$assa = $page_num * $i;
+		echo "<a href=$PHP_SELF?start=$assa>[$i]</a>";
+	}
+	
+	mysql_close($connect);
+	
+?>
+<td align=right><a href=write.php>글쓰기</a>
+</table>
+</div>
